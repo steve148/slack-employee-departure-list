@@ -4,10 +4,15 @@
     "description": "Get all employees who have their accounts deactivated on slack and therefore have departed the company.",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "",
-    "license": "ISC"
-  }
-  
+    "author": {
+        "name": "Lennox Stevenson",
+        "email": "lennox.stevenson@mail.utoronto.ca"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "prettier": "^1.14.2"
+    }
+}
