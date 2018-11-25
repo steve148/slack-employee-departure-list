@@ -15,6 +15,8 @@ const main = async () => {
 
   const sortedDeletedMembers = orderBy(deletedMembers, ['updated'], ['desc']);
 
+  console.log(`Total Number of Employees: ${sortedDeletedMembers.length}`);
+
   const output = sortedDeletedMembers.map(({ name, updated }) => ({
     name,
     updated: moment.unix(updated).format('dddd, MMMM Do YYYY, h:mm:ss a'),
