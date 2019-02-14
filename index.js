@@ -13,7 +13,7 @@ const main = async () => {
 
   const deletedMembers = members.filter(({ deleted, is_bot: isBot }) => deleted && !isBot);
 
-  const sortedDeletedMembers = orderBy(deletedMembers, ['updated'], ['desc']);
+  const sortedDeletedMembers = orderBy(deletedMembers, ['updated'], ['asc']);
 
   console.log(`Total Number of Employees: ${sortedDeletedMembers.length}`);
 
