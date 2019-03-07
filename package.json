@@ -14,10 +14,10 @@
     },
     "license": "ISC",
     "devDependencies": {
-        "eslint": "^5.4.0",
-        "eslint-config-airbnb-base": "^13.1.0",
-        "eslint-config-prettier": "^4.1.0",
-        "prettier": "^1.14.2"
+        "eslint": "5.4.0",
+        "eslint-config-airbnb-base": "13.1.0",
+        "eslint-config-prettier": "4.1.0",
+        "prettier": "1.14.2"
     },
     "dependencies": {
         "axios": "^0.18.0",
