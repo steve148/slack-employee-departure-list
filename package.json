@@ -2,9 +2,10 @@
     "name": "slack-employee-departure-list",
     "version": "1.0.0",
     "description": "Get all employees who have their accounts deactivated on slack and therefore have departed the company.",
-    "main": "index.js",
+    "main": "src/all.js",
     "scripts": {
-        "start": "node index.js",
+        "all": "node src/all.js",
+        "recent": "node src/    recent.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": {
