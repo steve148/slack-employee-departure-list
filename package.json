@@ -15,12 +15,10 @@
     "devDependencies": {
         "eslint": "^5.4.0",
         "eslint-config-airbnb-base": "^13.1.0",
-        "eslint-plugin-import": "^2.14.0",
         "prettier": "^1.14.2"
     },
     "dependencies": {
         "axios": "^0.18.0",
-        "lodash": "^4.17.10",
         "moment": "^2.22.2"
     }
 }
