@@ -5,26 +5,28 @@ const { orderBy } = require('lodash');
 const { TOKEN } = process.env;
 
 const main = async () => {
-  const response = await axios.get('https://slack.com/api/users.list', {
-    params: { token: TOKEN },
-  });
+    const response = await axios.get('https://slack.com/api/users.list', {
+        params: { token: TOKEN },
+    });
 
-  const { members } = response.data;
+    const { members } = response.data;
 
-  const deletedMembers = members.filter(({ deleted, is_bot: isBot }) => deleted && !isBot);
+    const deletedMembers = members.filter(
+        ({ deleted, is_bot: isBot }) => deleted && !isBot
+    );
 
-  const sortedDeletedMembers = orderBy(deletedMembers, ['updated'], ['asc']);
+    const sortedDeletedMembers = orderBy(deletedMembers, ['updated'], ['asc']);
 
-  console.log(`Total Number of Employees: ${sortedDeletedMembers.length}`);
+    console.log(`Total Number of Employees: ${sortedDeletedMembers.length}`);
 
-  const output = sortedDeletedMembers.map(({ name, updated }) => ({
-    name,
-    updated: moment.unix(updated).format('dddd, MMMM Do YYYY, h:mm:ss a'),
-  }));
+    const output = sortedDeletedMembers.map(({ name, updated }) => ({
+        name,
+        updated: moment.unix(updated).format('dddd, MMMM Do YYYY, h:mm:ss a'),
+    }));
 
-  console.log(output);
+    console.log(output);
 };
 
-main().catch((e) => {
-  console.error(e);
+main().catch(e => {
+    console.error(e);
 });
