@@ -5,7 +5,7 @@
     "main": "src/all.js",
     "scripts": {
         "all": "node src/all.js",
-        "recent": "node src/    recent.js",
+        "recent": "node src/recent.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": {
