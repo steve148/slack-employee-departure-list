@@ -19,6 +19,6 @@ module.exports = async () => {
 
     return sortedDeletedMembers.map(({ name, updated }) => ({
         name,
-        updated: moment.unix(updated).format('dddd, MMMM Do YYYY, h:mm:ss a'),
+        updated: moment.unix(updated).toISOString(),
     }));
 };
