@@ -44,7 +44,7 @@ TOKEN=YOUR-TOKEN-HERE yarn all
 
 ### `recent`
 
-Prints al ist of all employees that have had their accounts deleted since the last time the script was run. It also updates the locally stored state file to include the latest set of departed employees.
+Prints a list of all employees that have had their accounts deleted since the last time the script was run. It also updates the locally stored state file to include the latest set of departed employees.
 
 ```bash
 # Via npm
