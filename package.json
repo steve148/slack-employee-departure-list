@@ -6,7 +6,7 @@
     "scripts": {
         "all": "node src/all.js",
         "recent": "node src/recent.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "author": {
         "name": "Lennox Stevenson",
@@ -17,6 +17,7 @@
         "eslint": "6.8.0",
         "eslint-config-airbnb-base": "14.1.0",
         "eslint-config-prettier": "6.10.1",
+        "jest": "^25.3.0",
         "prettier": "2.0.2"
     },
     "dependencies": {
