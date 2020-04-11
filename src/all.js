@@ -1,11 +1,13 @@
-const fetchDepartedEmployees = require('./utils/fetchDepartedEmployees');
+const fetchDepartedEmployees = require("./utils/fetchDepartedEmployees");
 
 const main = async () => {
-    const departedEmployees = await fetchDepartedEmployees();
+  const departedEmployees = await fetchDepartedEmployees();
 
-    departedEmployees.forEach(employee => console.log(JSON.stringify(employee)));
+  departedEmployees.forEach((employee) =>
+    console.log(JSON.stringify(employee))
+  );
 };
 
-main().catch(e => {
-    console.error(e);
+main().catch((e) => {
+  console.error(e);
 });
