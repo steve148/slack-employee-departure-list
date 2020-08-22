@@ -21,7 +21,7 @@
         "prettier": "2.0.5"
     },
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.20.0",
         "lodash": "^4.17.20",
         "moment": "^2.27.0"
     }
