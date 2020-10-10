@@ -23,6 +23,6 @@
     "dependencies": {
         "axios": "^0.20.0",
         "lodash": "^4.17.20",
-        "moment": "^2.29.0"
+        "moment": "^2.29.1"
     }
 }
