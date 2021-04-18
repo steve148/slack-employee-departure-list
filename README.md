@@ -27,7 +27,31 @@ nvm use
 
 ## Usage
 
-A requirement of this script is that you have a token to access the slack workspace. As of writing this README, this can be done by going to https://api.slack.com/custom-integrations/legacy-tokens and creating a legacy token. You will need to use the token for commands that access the slack API.
+When the project first started, you could have used the https://api.slack.com/custom-integrations/legacy-tokens to authneticate with Slack's API. Slack is moving support away from legacy tokens though and instead moving users towards their newer Apps approach. You'll need to install a slack app and get a token from that app for these scripts to work. You can install a slack app in the workspace you're interested in watching with the following steps:
+
+1. Go to https://api.slack.com/apps. On the page you should see a button to create a new app.
+
+![Create app button](https://user-images.githubusercontent.com/4990214/115160458-3159a900-a066-11eb-85ec-98d0b4aa5050.png)
+
+2. A modal should open up. You'll need to give your app a name and determine which workspace you'll develop in.
+
+![Create app modal](https://user-images.githubusercontent.com/4990214/115160513-872e5100-a066-11eb-9d21-01a86c264fa5.png)
+
+3.Once the app is created, open the permissions section.
+
+https://user-images.githubusercontent.com/4990214/115160540-be046700-a066-11eb-983c-73db22f9f2bf.png
+
+3. By default, the slack app will not have permission to the `users:read` scope. You should give the app access to the `users:read` scope under the section for `User Token Scopes`.
+
+![User Token Scopes](https://user-images.githubusercontent.com/4990214/115160580-f99f3100-a066-11eb-9940-6c6b0d8a1c97.png)
+
+4. To have the application available in a workspace, you'll then need to install it. At the top of the permissions page, you should see a button to `Install to Workspace`. Click on that and follow the prompts.
+
+https://user-images.githubusercontent.com/4990214/115160647-5569ba00-a067-11eb-964d-8ea6652f7f8e.png
+
+1. After installing the app to the workspace you want to watch, a `User Oauth Token` should be shown on screen. This token is what you'll use to authenticate with the commands below.
+
+## Commands
 
 This project provides the following commands:
 
