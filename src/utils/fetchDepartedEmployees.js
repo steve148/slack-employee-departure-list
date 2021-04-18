@@ -6,7 +6,7 @@ const getSlackToken = require("./getToken");
 
 module.exports = async () => {
   const response = await axios.get("https://slack.com/api/users.list", {
-    params: { token: getSlackToken() },
+    headers: { Authorization: `Bearer ${getSlackToken()}` },
   });
 
   const { members } = response.data;
