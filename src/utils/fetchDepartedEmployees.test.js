@@ -55,7 +55,6 @@ describe("fetchDepartedEmployees()", () => {
     axios.get.mockResolvedValue({
       data: {
         members: [
-          ,
           {
             name: "Samir Nagheenanajar",
             deleted: true,
