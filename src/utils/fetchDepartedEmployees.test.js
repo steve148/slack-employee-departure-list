@@ -7,7 +7,7 @@ jest.mock("axios");
 describe("fetchDepartedEmployees()", () => {
   test("returns empty array if no users in slack workspace", async () => {
     axios.get.mockResolvedValue({
-      data: { members: [] },
+      data: { members: [], response_metadata: {} },
     });
     const departedEmployees = await fetchDepartedEmployees();
 
@@ -24,6 +24,7 @@ describe("fetchDepartedEmployees()", () => {
             updated: new Date(1999, 2, 19).getTime() / 1000,
           },
         ],
+        response_metadata: {},
       },
     });
     const departedEmployees = await fetchDepartedEmployees();
@@ -44,6 +45,7 @@ describe("fetchDepartedEmployees()", () => {
             is_bot: true,
           },
         ],
+        response_metadata: {},
       },
     });
     const departedEmployees = await fetchDepartedEmployees();
@@ -66,10 +68,52 @@ describe("fetchDepartedEmployees()", () => {
             updated: new Date(1999, 2, 19).getTime() / 1000,
           },
         ],
+        response_metadata: {},
       },
     });
     const departedEmployees = await fetchDepartedEmployees();
 
+    expect(departedEmployees).toEqual([
+      { name: "Michael Bolton", updated: new Date(1999, 2, 19).toISOString() },
+      {
+        name: "Samir Nagheenanajar",
+        updated: new Date(1999, 2, 20).toISOString(),
+      },
+    ]);
+  });
+
+  test("fetches all pages of employees", async () => {
+    axios.get
+      .mockImplementationOnce(() =>
+        Promise.resolve({
+          data: {
+            members: [
+              {
+                name: "Samir Nagheenanajar",
+                deleted: true,
+                updated: new Date(1999, 2, 20).getTime() / 1000,
+              },
+            ],
+            response_metadata: { next_cursor: "some-cursor" },
+          },
+        })
+      )
+      .mockImplementationOnce(() =>
+        Promise.resolve({
+          data: {
+            members: [
+              {
+                name: "Michael Bolton",
+                deleted: true,
+                updated: new Date(1999, 2, 19).getTime() / 1000,
+              },
+            ],
+            response_metadata: {},
+          },
+        })
+      );
+
+    const departedEmployees = await fetchDepartedEmployees();
     expect(departedEmployees).toEqual([
       { name: "Michael Bolton", updated: new Date(1999, 2, 19).toISOString() },
       {
