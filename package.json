@@ -18,7 +18,7 @@
         "eslint-config-airbnb-base": "15.0.0",
         "eslint-config-prettier": "8.5.0",
         "jest": "^27.5.1",
-        "prettier": "2.5.1"
+        "prettier": "2.6.0"
     },
     "dependencies": {
         "axios": "^0.26.1",
